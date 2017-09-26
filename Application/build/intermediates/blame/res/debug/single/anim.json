@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/zhouliquan/.android/build-cache/e27cbd046e4e2e2d6b9dbc72822bf9a73f730821/output/res/drawable-v21/abc_edit_text_material.xml"
+    }
+]

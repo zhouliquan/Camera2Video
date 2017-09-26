@@ -1,0 +1,4 @@
+#Tue Sep 26 18:23:17 CST 2017
+base.0=/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2
+renamed.0=classes.dex
+file.0=/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex
