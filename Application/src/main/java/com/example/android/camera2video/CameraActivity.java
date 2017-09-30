@@ -18,9 +18,12 @@ package com.example.android.camera2video;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 
-public class CameraActivity extends Activity {
+public class CameraActivity extends FragmentActivity {
 
+/*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,22 @@ public class CameraActivity extends Activity {
                     .replace(R.id.container, Camera2VideoFragment.newInstance())
                     .commit();
         }
+    }
+*/
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_camera);
+        if(null != savedInstanceState) {
+            return;
+        }
+
+        AppendVideoFragment appentVideo = new AppendVideoFragment();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.container, appentVideo)
+                .commit();
+
     }
 
 }
