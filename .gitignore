@@ -1,4 +1,3 @@
-build/*
 .idea/*
-build/intermediates/*
-.gradle/3.4.1/taskHistory/*
+Application/build/*
+build/*
