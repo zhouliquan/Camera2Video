@@ -1,7 +1,0 @@
-#Tue Sep 26 18:15:13 CST 2017
-base.0=/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_eaded1f60b6168a3eb938806ebcab73e150e69a6
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1c905248d87823095c2e760f4f4a12cf214c92d7/classes.dex
-base.1=/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1c905248d87823095c2e760f4f4a12cf214c92d7
-file.0=/home/zhouliquan/Downloads/android-Camera2Video-master/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_eaded1f60b6168a3eb938806ebcab73e150e69a6/classes.dex
