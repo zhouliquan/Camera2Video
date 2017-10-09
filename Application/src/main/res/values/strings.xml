@@ -7,5 +7,4 @@
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
     <string name="resume">resume</string>
     <string name="pause">pause</string>
-    <string name="append">append</string>
 </resources>
