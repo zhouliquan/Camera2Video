@@ -108,6 +108,7 @@ public class Camera2VideoFragment extends Fragment
 
     private Button mBtnPause;
     private Button mBtnResume;
+    private Button mBtnPrerecord;
 
     /**
      * A reference to the opened {@link android.hardware.camera2.CameraDevice}.
@@ -292,6 +293,8 @@ public class Camera2VideoFragment extends Fragment
         mBtnResume = (Button) view.findViewById(R.id.resume);
         mBtnPause.setOnClickListener(this);
         mBtnResume.setOnClickListener(this);
+        mBtnPrerecord = (Button) view.findViewById(R.id.btn_prerecord);
+        mBtnPrerecord.setOnClickListener(this);
     }
 
     @Override
@@ -347,7 +350,39 @@ public class Camera2VideoFragment extends Fragment
                 }
                 break;
             }
+            case R.id.btn_prerecord: {
+                Log.i(TAG, "onClick: prerecord");
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for(int i = 0 ; i < 5; i++) {
+                            startRecordingVideo(); //prerecord
+                            try {
+                                Thread.sleep(5000);
+
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            stopRecordingVideo_zlq();
+                        }
+                    }
+                }).start();
+
+                break;
+            }
         }
+    }
+
+    private void stopRecordingVideo_zlq() {
+
+        Log.i(TAG, "stopRecordingVideo_zlq: ok");
+        // Stop recording
+        mMediaRecorder.stop();
+        mMediaRecorder.reset();
+
+        Log.d(TAG, "Video saved: " + mNextVideoAbsolutePath);
+        mNextVideoAbsolutePath = null;
+//        startPreview();
     }
 
     /**
@@ -667,7 +702,7 @@ public class Camera2VideoFragment extends Fragment
                         @Override
                         public void run() {
                             // UI
-                            mButtonVideo.setText(R.string.stop);
+//                            mButtonVideo.setText(R.string.stop);
                             mIsRecordingVideo = true;
 
                             // Start recording
@@ -700,7 +735,7 @@ public class Camera2VideoFragment extends Fragment
     private void stopRecordingVideo() {
         // UI
         mIsRecordingVideo = false;
-        mButtonVideo.setText(R.string.record);
+//        mButtonVideo.setText(R.string.record);
         // Stop recording
         mMediaRecorder.stop();
         mMediaRecorder.reset();
@@ -712,7 +747,7 @@ public class Camera2VideoFragment extends Fragment
             Log.d(TAG, "Video saved: " + mNextVideoAbsolutePath);
         }
         mNextVideoAbsolutePath = null;
-        startPreview();
+//        startPreview();
     }
 
     /**

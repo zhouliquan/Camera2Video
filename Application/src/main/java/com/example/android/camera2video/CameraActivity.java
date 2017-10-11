@@ -23,7 +23,6 @@ import android.support.v4.app.FragmentActivity;
 
 public class CameraActivity extends FragmentActivity {
 
-/*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +33,8 @@ public class CameraActivity extends FragmentActivity {
                     .commit();
         }
     }
-*/
 
-    @Override
+/*    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
@@ -49,6 +47,6 @@ public class CameraActivity extends FragmentActivity {
                 .replace(R.id.container, appentVideo)
                 .commit();
 
-    }
+    }*/
 
 }
