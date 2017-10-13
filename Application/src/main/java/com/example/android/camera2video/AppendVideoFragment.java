@@ -28,10 +28,19 @@ import java.nio.ByteBuffer;
 public class AppendVideoFragment extends Fragment {
 
     private static final String SDCARD_PATH = Environment.getExternalStorageDirectory().getPath();
-    private static final String[] VIDEOS = {
-            SDCARD_PATH + "/input.mp4",
-            SDCARD_PATH + "/test.mp4",
+    private String[] VIDEOS = {
+            SDCARD_PATH + "/0.mp4",
+            SDCARD_PATH + "/1.mp4",
+            SDCARD_PATH + "/2.mp4",
+            SDCARD_PATH + "/3.mp4",
+            SDCARD_PATH + "/4.mp4",
     };
+
+    public void setVideoPaths(String[] strings) {
+        VIDEOS = strings;
+        for(String s : VIDEOS)
+        Log.i(TAG, "setVideoPaths: " + s);
+    }
 
     private static final String TAG = "zlq";
     Button combineVideoBtn;
@@ -188,21 +197,25 @@ public class AppendVideoFragment extends Fragment {
         mediaExtractor.release();
     }
 
-    private void combineVideo3() {
+    public void combineVideo3() {
         try {
 
             getFormats();
             Log.i(TAG, "video: " + mVideoFormat.toString() + "\naudio: " + mAudioFormat.toString());
 
             mediaMuxer = new MediaMuxer(SDCARD_PATH + "/output", MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
+            mediaMuxer.setOrientationHint(90);
             mVideoTrackIndex = mediaMuxer.addTrack(mVideoFormat);
             mAudioTrackIndex = mediaMuxer.addTrack(mAudioFormat);
             mediaMuxer.start();
 
             MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
             ByteBuffer byteBuffer = ByteBuffer.allocate(500 * 1024);
-            writeData(byteBuffer, bufferInfo, VIDEOS[0]);
-            writeData(byteBuffer, bufferInfo, VIDEOS[1]);
+            for(String path : VIDEOS){
+                writeData(byteBuffer, bufferInfo, path);
+            }
+//            writeData(byteBuffer, bufferInfo, VIDEOS[0]);
+//            writeData(byteBuffer, bufferInfo, VIDEOS[1]);
 
             mediaMuxer.stop();
             mediaMuxer.release();

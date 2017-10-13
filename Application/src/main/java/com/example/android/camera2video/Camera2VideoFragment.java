@@ -40,6 +40,7 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.annotation.NonNull;
@@ -288,11 +289,11 @@ public class Camera2VideoFragment extends Fragment
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         mButtonVideo = (Button) view.findViewById(R.id.video);
         mButtonVideo.setOnClickListener(this);
-        view.findViewById(R.id.info).setOnClickListener(this);
-        mBtnPause = (Button) view.findViewById(R.id.pause);
-        mBtnResume = (Button) view.findViewById(R.id.resume);
-        mBtnPause.setOnClickListener(this);
-        mBtnResume.setOnClickListener(this);
+//        view.findViewById(R.id.info).setOnClickListener(this);
+//        mBtnPause = (Button) view.findViewById(R.id.pause);
+//        mBtnResume = (Button) view.findViewById(R.id.resume);
+//        mBtnPause.setOnClickListener(this);
+//        mBtnResume.setOnClickListener(this);
         mBtnPrerecord = (Button) view.findViewById(R.id.btn_prerecord);
         mBtnPrerecord.setOnClickListener(this);
     }
@@ -326,30 +327,30 @@ public class Camera2VideoFragment extends Fragment
                 }
                 break;
             }
-            case R.id.info: {
-                Activity activity = getActivity();
-                if (null != activity) {
-                    new AlertDialog.Builder(activity)
-                            .setMessage(R.string.intro_message)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
-                }
-                break;
-            }
-            case R.id.pause: {
-                Log.i(TAG, "onClick: pause");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    mMediaRecorder.pause();
-                }
-                break;
-            }
-            case R.id.resume: {
-                Log.i(TAG, "onClick: resume");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    mMediaRecorder.resume();
-                }
-                break;
-            }
+//            case R.id.info: {
+//                Activity activity = getActivity();
+//                if (null != activity) {
+//                    new AlertDialog.Builder(activity)
+//                            .setMessage(R.string.intro_message)
+//                            .setPositiveButton(android.R.string.ok, null)
+//                            .show();
+//                }
+//                break;
+//            }
+//            case R.id.pause: {
+//                Log.i(TAG, "onClick: pause");
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                    mMediaRecorder.pause();
+//                }
+//                break;
+//            }
+//            case R.id.resume: {
+//                Log.i(TAG, "onClick: resume");
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                    mMediaRecorder.resume();
+//                }
+//                break;
+//            }
             case R.id.btn_prerecord: {
                 Log.i(TAG, "onClick: prerecord");
                 new Thread(new Runnable() {
@@ -365,6 +366,13 @@ public class Camera2VideoFragment extends Fragment
                             }
                             stopRecordingVideo_zlq();
                         }
+                        Log.i(TAG, "tempFiles:");
+                        for(String str : tempPaths){
+                            Log.i(TAG, "5454" + str.toString());
+                        }
+                        AppendVideoFragment appendVideoFragment = new AppendVideoFragment();
+                        appendVideoFragment.setVideoPaths(tempPaths);
+                        appendVideoFragment.combineVideo3();
                     }
                 }).start();
 
@@ -644,6 +652,7 @@ public class Camera2VideoFragment extends Fragment
         }
         mMediaRecorder.setOutputFile(mNextVideoAbsolutePath);
         Log.i(TAG, mNextVideoAbsolutePath);
+        saveTempPaths(mNextVideoAbsolutePath);
         mMediaRecorder.setVideoEncodingBitRate(10000000);
         mMediaRecorder.setVideoFrameRate(30);
         mMediaRecorder.setVideoSize(mVideoSize.getWidth(), mVideoSize.getHeight());
@@ -661,10 +670,26 @@ public class Camera2VideoFragment extends Fragment
         mMediaRecorder.prepare();
     }
 
+    // add save file path
+    private String[] tempPaths = new String[2];
+    private void saveTempPaths(String path) {
+        if (null == tempPaths[0]){
+            tempPaths[0] = path;
+        } else if(null == tempPaths[1]){
+            tempPaths[1] = path;
+        } else {
+            tempPaths[0] = tempPaths[1];
+            tempPaths[1] = path;
+        }
+    }
+
     private String getVideoFilePath(Context context) {
-        final File dir = context.getExternalFilesDir(null);
-        return (dir == null ? "" : (dir.getAbsolutePath() + "/"))
-                + System.currentTimeMillis() + ".mp4";
+//        final File dir = context.getExternalFilesDir(null);
+//        return (dir == null ? "" : (dir.getAbsolutePath() + "/"))
+//                + System.currentTimeMillis() + ".mp4";
+
+        return (Environment.getExternalStorageDirectory().getPath() + "/zlq_"
+                + System.currentTimeMillis() + ".mp4");
     }
 
     private void startRecordingVideo() {
